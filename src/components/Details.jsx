@@ -1,14 +1,10 @@
 import { useContext } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../firebase/AuthProvider";
 
 const Details = () => {
-    const products = useLoaderData();
-    const { name } = useParams();
+    const product = useLoaderData();
     const { setLocalStorage } = useContext(AuthContext);
-
-    const product = products.find(product => product.name === name);
-    console.log(product)
 
     return (
         <div className="bg-white rounded-lg lg:w-3/4 mx-auto p-4 flex">

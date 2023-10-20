@@ -1,7 +1,3 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../firebase/AuthProvider";
-
 const Banner = () => {
 
   return (

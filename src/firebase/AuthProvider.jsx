@@ -29,6 +29,12 @@ const AuthProvider = ({ children }) => {
         })
     }
 
+    const removeLocalStorage = (product) => {
+        const newCart = storage.filter(item => item !== product);
+        setStorage(newCart);
+        window.location.reload();
+    }
+
     const handleGoogleSignIn = () => {
         setLoading(true);
         return (
@@ -61,7 +67,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signOut(auth);
     }
-    const authInfo = { user, loading, createUser, signInUser, setUser, logOut, handleGoogleSignIn, setLoading, setLocalStorage }
+    const authInfo = { user, loading, createUser, signInUser, setUser, logOut, handleGoogleSignIn, setLoading, setLocalStorage, removeLocalStorage }
 
     return (
         <AuthContext.Provider value={authInfo}>

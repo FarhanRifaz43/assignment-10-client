@@ -14,6 +14,13 @@ const Products = () => {
             <div>
                 <h2 className="text-center mt-8 font-bold text-2xl">Products of {name}</h2>
                 <div className="grid lg:grid-cols-2 grid-cols-1 my-5 gap-8 ml-5">
+                    <div className=" col-span-2 w-screen">
+                        {(filterProducts.length == 0) &&
+                            <>
+                                <h2 className="w-fit mx-auto font-bold text-lg mt-20">Oops!</h2>
+                                <p className="mx-auto mt-3 w-fit">No products available right now.</p>
+                            </>}
+                    </div>
                     {
                         filterProducts.map(filterProduct => <FilterProducts key={filterProduct._id} filterProduct={filterProduct}></FilterProducts>)
                     }

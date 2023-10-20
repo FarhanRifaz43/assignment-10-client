@@ -54,9 +54,9 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <NavLink to={'/'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Home</li></NavLink>
-                            <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Products</li></NavLink>
+                            <NavLink to={'/all'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Products</li></NavLink>
                             {user && <><NavLink to={'/add'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Add Product</li></NavLink>
-                                <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">My Profile</li></NavLink></>}
+                                <NavLink to={'/profile'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">My Profile</li></NavLink></>}
                         </ul>
                     </div>
                     {/* this is the desktop view navbar */}
@@ -65,20 +65,13 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-5 cursor-pointer">
                         <NavLink to={'/'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Home</li></NavLink>
-                        <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Products</li></NavLink>
+                        <NavLink to={'/all'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Products</li></NavLink>
                         {user && <><NavLink to={'/add'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Add Product</li></NavLink>
-                            <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">My Profile</li></NavLink></>}
+                            <NavLink to={'/profile'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">My Profile</li></NavLink></>}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {user && <><div className="dropdown dropdown-bottom dropdown-end mr-4">
-                        <NavLink><h2 tabIndex={1} className="p-2 text-xl rounded-xl hover:bg-pink-100 indicator"><span className="indicator-item badge badge-secondary">{cart.length}</span> <AiOutlineShoppingCart></AiOutlineShoppingCart></h2></NavLink>
-                        <ul tabIndex={1} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                               <Cart></Cart>
-                        </ul>
-                    </div>
-
-                    </>}
+                    {user && <NavLink to={'/cart'}><h2 tabIndex={1} className="p-2 text-xl rounded-xl hover:bg-pink-100 indicator mr-4"><span className="indicator-item badge badge-secondary">{cart.length}</span> <AiOutlineShoppingCart></AiOutlineShoppingCart></h2></NavLink>}
                     <div className="dropdown dropdown-bottom dropdown-end">
                         <h2 tabIndex={0} className="hover:bg-pink-100 text-xl rounded-xl p-2 mr-4"><AiOutlineUser></AiOutlineUser></h2>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
