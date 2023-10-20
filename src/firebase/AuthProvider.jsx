@@ -14,7 +14,13 @@ const AuthProvider = ({children}) => {
 
     const handleGoogleSignIn = () => {
         setLoading(true);
-        return signInWithPopup(auth, provider);
+        return (
+        signInWithPopup(auth, provider)
+        .then(() => {
+            window.location.href = '/'
+        })
+        .catch(error)
+        );
     }
 
     const createUser = (email, password) => {
