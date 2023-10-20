@@ -3,23 +3,40 @@ import PropTypes from 'prop-types';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from "./firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const provider = new GoogleAuthProvider();
 
 export const AuthContext = createContext(null)
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
+    const reload = JSON.parse(localStorage.getItem('productName'));
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [storage, setStorage] = useState(reload);
+    const storageString = JSON.stringify(storage? storage : [])
+    localStorage.setItem('productName', storageString);
+
+    const setLocalStorage = (param) => {
+        const newStorage = [...storage, param];
+        setStorage(newStorage);
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Item added to cart!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
 
     const handleGoogleSignIn = () => {
         setLoading(true);
         return (
-        signInWithPopup(auth, provider)
-        .then(() => {
-            window.location.href = '/'
-        })
-        .catch(error)
+            signInWithPopup(auth, provider)
+                .then(() => {
+                    window.location.href = '/'
+                })
+                .catch(error)
         );
     }
 
@@ -36,7 +53,7 @@ const AuthProvider = ({children}) => {
             setUser(currentUser);
             setLoading(false);
         });
-        return () =>{
+        return () => {
             unSubscribe();
         }
     }, [])
@@ -44,7 +61,7 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return signOut(auth);
     }
-const authInfo = {user, loading, createUser, signInUser, setUser, logOut, handleGoogleSignIn, setLoading }
+    const authInfo = { user, loading, createUser, signInUser, setUser, logOut, handleGoogleSignIn, setLoading, setLocalStorage }
 
     return (
         <AuthContext.Provider value={authInfo}>

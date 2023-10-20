@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { AuthContext } from "../firebase/AuthProvider";
 
 const Details = () => {
     const products = useLoaderData();
     const { name } = useParams();
+    const { setLocalStorage } = useContext(AuthContext);
 
     const product = products.find(product => product.name === name);
     console.log(product)
@@ -22,7 +25,7 @@ const Details = () => {
                     <p>{product.description}</p>
                 </div>
                 <div className="mt-16 flex gap-5">
-                    <button className="btn btn-outline btn-info">Add to Cart</button>
+                    <button onClick={() => setLocalStorage(product.name)} className="btn btn-outline btn-info">Add to Cart</button>
                 </div>
             </div>
         </div>

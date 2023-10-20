@@ -3,9 +3,11 @@ import { AiOutlineUser, AiOutlineLogin, AiOutlineLogout, AiOutlineShoppingCart }
 import { useContext } from "react";
 import { AuthContext } from "../firebase/AuthProvider";
 import Swal from 'sweetalert2'
+import Cart from "./Cart";
 
 
 const Navbar = () => {
+    const cart =  JSON.parse(localStorage.getItem('productName'));
     const { user, logOut } = useContext(AuthContext)
 
     const setDarkMode = () => {
@@ -69,7 +71,14 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {user && <NavLink><h2 className="p-2 text-xl rounded-xl hover:bg-pink-100"><AiOutlineShoppingCart></AiOutlineShoppingCart></h2></NavLink>}
+                    {user && <><div className="dropdown dropdown-bottom dropdown-end mr-4">
+                        <NavLink><h2 tabIndex={1} className="p-2 text-xl rounded-xl hover:bg-pink-100 indicator"><span className="indicator-item badge badge-secondary">{cart.length}</span> <AiOutlineShoppingCart></AiOutlineShoppingCart></h2></NavLink>
+                        <ul tabIndex={1} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                               <Cart></Cart>
+                        </ul>
+                    </div>
+
+                    </>}
                     <div className="dropdown dropdown-bottom dropdown-end">
                         <h2 tabIndex={0} className="hover:bg-pink-100 text-xl rounded-xl p-2 mr-4"><AiOutlineUser></AiOutlineUser></h2>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
