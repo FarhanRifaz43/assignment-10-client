@@ -27,11 +27,11 @@ const Login = () => {
         <div>
             <div className="min-h-screen">
                 <div className="w-fit mx-auto items-center flex flex-col">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-4xl font-bold text-center mt-16"><span className="text-cyan-500">Log In</span> To Your Account</h1>
+                    <div className="text-center lg:text-left" data-aos="zoom-in" data-aos-duration="600">
+                        <h1 className="text-4xl font-bold text-center mt-16"><span className="text-pink-400">Log In</span> To Your Account</h1>
                         <p className="py-6 text-center text-gray-500">Log in to proceed and access your personalized data, contents, features and much more!</p>
                     </div>
-                    <div className="flex-grow w-full border border-cyan-500 rounded-lg bg-base-100 mt-10">
+                    <div className="flex-grow w-full border border-pink-400 rounded-lg bg-base-100 mt-10" data-aos="fade-up" data-aos-duration="600">
                         <div className="card-body rounded-lg">
                             <form onSubmit={handleLogin}>
                                 <div className="form-control">
@@ -49,13 +49,13 @@ const Login = () => {
                                         <a href="#" className="text-xs underline mt-2">Forgot password?</a>
                                     </label>
                                     <div>
-                                        <p className="mt-2 pl-2 text-xs text-cyan-500">{error ? error : success}</p>
+                                        <p className="mt-2 pl-2 text-xs text-pink-400">{error ? error : success}</p>
                                     </div>
                                 </div>
                                 <div className="form-control mt-2">
-                                    <button className="btn hover:text-cyan-400 text-black hover:bg-black">Login</button>
+                                    <button className="btn hover:text-pink-400 text-black hover:bg-black">Login</button>
                                     <div>
-                                        <h2 className="mt-3 text-sm text-gray-500">Don't have an account? <span className="text-cyan-500 underline">
+                                        <h2 className="mt-3 text-sm text-gray-500">Don't have an account? <span className="text-pink-400 underline">
                                             <NavLink to={'/register'}>Register</NavLink>
                                         </span></h2>
                                     </div>
@@ -63,7 +63,7 @@ const Login = () => {
                             </form>
                             <div className="flex items-center gap-4 w-fit mx-auto mt-8">
                                 <h2 className="font-bold">Sign-in With</h2>
-                                <button className="flex items-center gap-1 border border-cyan-500 px-2 py-2 rounded-md" onClick={handleGoogleSignIn}><FcGoogle></FcGoogle>Google</button>
+                                <button className="flex items-center gap-1 border border-pink-400 px-2 py-2 rounded-md" onClick={handleGoogleSignIn}><FcGoogle></FcGoogle>Google</button>
                             </div>
                         </div>
                     </div>

@@ -52,9 +52,9 @@ const Navbar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Home</li></NavLink>
+                            <NavLink to={'/'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Home</li></NavLink>
                             <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Products</li></NavLink>
-                            {user && <><NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Add Product</li></NavLink>
+                            {user && <><NavLink to={'/add'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Add Product</li></NavLink>
                                 <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">My Profile</li></NavLink></>}
                         </ul>
                     </div>
@@ -63,9 +63,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-5 cursor-pointer">
-                        <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Home</li></NavLink>
+                        <NavLink to={['/']}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Home</li></NavLink>
                         <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Products</li></NavLink>
-                        {user && <><NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Add Product</li></NavLink>
+                        {user && <><NavLink to={'/add'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Add Product</li></NavLink>
                             <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">My Profile</li></NavLink></>}
                     </ul>
                 </div>
@@ -78,7 +78,6 @@ const Navbar = () => {
                                 <img className="w-10 rounded-full" src={user?.photoURL || 'https://media.istockphoto.com/id/1016744004/vector/profile-placeholder-image-gray-silhouette-no-photo.jpg?s=612x612&w=0&k=20&c=mB6A9idhtEtsFXphs1WVwW_iPBt37S2kJp6VpPhFeoA='} alt="" />
                                 <div className="text-xs text-gray-500">
                                     <h2 className="font-bold">{user?.displayName || `user_${parseInt(Math.random() * 1000000)}`}</h2>
-                                    <h2>{user?.email}</h2>
                                 </div>
                             </div>
                             <hr className="mb-3" />
