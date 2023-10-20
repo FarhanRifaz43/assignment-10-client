@@ -30,6 +30,7 @@ const Register = () => {
         createUser(email, password)
         .then(result => {
             setSuccess('User created successfully!')
+            window.location.href = '/'
         })
         .catch(err =>{
             setError('There is already an account with this e-mail!')

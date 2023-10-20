@@ -1,15 +1,64 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../firebase/AuthProvider";
+
 const Banner = () => {
-    return (
-        <div className="hero min-h-screen mb-20" style={{backgroundImage: 'url(https://i.ibb.co/sWW02wG/pexels-sora-shimazaki-5673488.jpg)'}}>
-  <div className="hero-overlay bg-opacity-60"></div>
-  <div className="hero-content text-center text-neutral-content">
-    <div className="max-w-lg">
-      <h1 className="mb-5 text-5xl font-bold">Elevate Your Events with <span className="text-cyan-500">Class</span></h1>
-      <p className="mb-5 text-gray-300"><i>We specialize in crafting unforgettable corporate events that leave <br /> a lasting impression. Discover the art of flawless event management with us.</i></p>
-    </div>
-  </div>
-</div>
-    );
+const {user} = useContext(AuthContext)
+
+  return (
+    <>
+      <div className="carousel w-full h-[80vh]">
+        <div id="slide1" className="carousel-item relative w-full">
+          <div className="hero" style={{ backgroundImage: 'url(https://i.ibb.co/ZXd8bVQ/alexandre-debieve-FO7-JIlwj-Ot-U-unsplash.jpg)' }}>
+            <div className="hero-overlay bg-opacity-70"></div>
+            <div className="hero-content text-left text-white" data-aos="fade-down">
+              <div className="">
+                <h1 className="mb-5 text-5xl font-bold">Welcome to Innovation and Prosperity</h1>
+                {user && <p className="mb-5">Explore and find the best deals for you!</p>}
+                {!user && <p className="mb-5">Sign in and start exploring great deals- your one-stop shop for tech products!</p>}
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" className="btn btn-circle">❮</a>
+            <a href="#slide2" className="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide2" className="carousel-item relative w-full">
+          <div className="hero" style={{ backgroundImage: 'url(https://i.ibb.co/XzwS9b8/maxim-hopman-Iay-KLkmz6g0-unsplash.jpg)' }}>
+            <div className="hero-overlay bg-opacity-70"></div>
+            <div className="hero-content text-left text-white" data-aos="fade-down">
+              <div className="">
+                <h1 className="mb-5 text-5xl font-bold">Welcome to Innovation and Prosperity</h1>
+                {user && <p className="mb-5">Explore and find the best deals for you!</p>}
+                {!user && <p className="mb-5">Sign in and start exploring great deals- your one-stop shop for tech products!</p>}
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" className="btn btn-circle">❮</a>
+            <a href="#slide3" className="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide3" className="carousel-item relative w-full">
+          <div className="hero" style={{ backgroundImage: 'url(https://i.ibb.co/hL48MgT/nasa-Q1p7bh3-SHj8-unsplash.jpg)' }}>
+            <div className="hero-overlay bg-opacity-70"></div>
+            <div className="hero-content text-left text-white" data-aos="fade-down">
+              <div className="">
+                <h1 className="mb-5 text-5xl font-bold">Welcome to Innovation and Prosperity</h1>
+                {user && <p className="mb-5">Explore and find the best deals for you!</p>}
+                {!user && <p className="mb-5">Sign in and start exploring great deals- your one-stop shop for tech products!</p>}
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" className="btn btn-circle">❮</a>
+            <a href="#slide1" className="btn btn-circle">❯</a>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Banner;

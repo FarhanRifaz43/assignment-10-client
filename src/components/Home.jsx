@@ -4,8 +4,8 @@ import Footer from "./Footer";
 const Home = () => {
     return (
         <>
-        {/* <Banner></Banner>
-        <Footer></Footer> */}
+        <Banner></Banner>
+        <Footer></Footer>
         </>
     );
 };
