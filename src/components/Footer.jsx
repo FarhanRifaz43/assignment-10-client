@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-black text-white py-20">
+        <footer className="footer footer-center p-10 bg-black text-white py-20" data-aos="fade-up" data-aos-duration="800">
             <aside>
                 <div className="flex items-center mb-4 gap-2">
                 <img className="w-8 rounded-full" src="https://previews.123rf.com/images/defmorph/defmorph1806/defmorph180600011/103110671-vector-icon-hi-tech-company-logo-design-business-symbol-concept-minimal-line-style-eps-10.jpg" alt="" />

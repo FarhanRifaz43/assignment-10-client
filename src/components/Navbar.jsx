@@ -7,7 +7,6 @@ import Swal from 'sweetalert2'
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
-    console.log(user)
 
     const setDarkMode = () => {
         document.querySelector('html').setAttribute('data-theme', 'dark')
@@ -43,8 +42,8 @@ const Navbar = () => {
     }
 
     return (
-        <div className="sticky top-0 z-20">
-            <div className="navbar bg-base-100 border-b py-5">
+        <div className="sticky bg-white top-0 z-20">
+            <div className="navbar border-b py-5">
                 {/* this is the mobile view navbar */}
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -63,7 +62,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-5 cursor-pointer">
-                        <NavLink to={['/']}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Home</li></NavLink>
+                        <NavLink to={'/'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Home</li></NavLink>
                         <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Products</li></NavLink>
                         {user && <><NavLink to={'/add'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Add Product</li></NavLink>
                             <NavLink><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">My Profile</li></NavLink></>}

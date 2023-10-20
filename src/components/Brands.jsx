@@ -1,0 +1,17 @@
+import BrandCard from "./BrandCard";
+
+const Brands = ({brands}) => {
+
+    return (
+        <div>
+            <h2 className="text-center mt-16 text-2xl font-bold">Popular Brands</h2>
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-fit mx-auto gap-10 mb-16 mt-8">
+            {
+                brands.map(brand => <BrandCard key={brand._id} brand={brand}></BrandCard>)
+            }
+            </div>
+        </div>
+    );
+};
+
+export default Brands;
