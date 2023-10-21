@@ -33,27 +33,27 @@ const router = createBrowserRouter([
       {
         path: '/product/:name',
         element: <Products></Products>,
-        loader: () => fetch('http://localhost:4000/products')
+        loader: () => fetch(' https://assignment-10-server-9xncomvgn-farhanrifaz43s-projects.vercel.app/products')
       },
       {
         path: '/product/details/:id',
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:4000/products/${params.id}`)
+        loader: ({params}) => fetch(` https://assignment-10-server-9xncomvgn-farhanrifaz43s-projects.vercel.app/products/${params.id}`)
       },
       {
         path: '/cart',
         element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-        loader: () => fetch('http://localhost:4000/products')
+        loader: () => fetch(' https://assignment-10-server-9xncomvgn-farhanrifaz43s-projects.vercel.app/products')
       },
       {
         path: '/all',
         element: <AllProducts></AllProducts>,
-        loader: () => fetch('http://localhost:4000/products')
+        loader: () => fetch(' https://assignment-10-server-9xncomvgn-farhanrifaz43s-projects.vercel.app/products')
       },
       {
         path: '/update/:id',
         element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:4000/products/${params.id}`)
+        loader: ({params}) => fetch(` https://assignment-10-server-9xncomvgn-farhanrifaz43s-projects.vercel.app/products/${params.id}`)
       },
       {
         path: '/news',
