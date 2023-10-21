@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [storage, setStorage] = useState(reload);
-    const storageString = JSON.stringify(storage? storage : [])
+    const storageString = JSON.stringify(storage ? storage : [])
     localStorage.setItem('productName', storageString);
 
     const setLocalStorage = (param) => {
@@ -28,6 +28,17 @@ const AuthProvider = ({ children }) => {
             timer: 1500
         })
     }
+
+    const prevTheme = JSON.parse(localStorage.getItem('theme'))
+    const [theme, setTheme] = useState(prevTheme ? prevTheme : 'light')
+    document.querySelector('html').setAttribute('data-theme', theme)
+    localStorage.setItem('theme', JSON.stringify(theme))
+
+
+
+
+
+
 
     const removeLocalStorage = (product) => {
         const newCart = storage.filter(item => item !== product);
@@ -67,7 +78,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signOut(auth);
     }
-    const authInfo = { user, loading, createUser, signInUser, setUser, logOut, handleGoogleSignIn, setLoading, setLocalStorage, removeLocalStorage }
+    const authInfo = { user, loading, createUser, signInUser, setUser, logOut, handleGoogleSignIn, setLoading, setLocalStorage, removeLocalStorage, theme, setTheme }
 
     return (
         <AuthContext.Provider value={authInfo}>

@@ -1,25 +1,18 @@
 import { NavLink } from "react-router-dom";
 import { AiOutlineUser, AiOutlineLogin, AiOutlineLogout, AiOutlineShoppingCart } from 'react-icons/ai';
+import { TbSunFilled, TbMoonFilled } from 'react-icons/tb';
 import { useContext } from "react";
 import { AuthContext } from "../firebase/AuthProvider";
 import Swal from 'sweetalert2'
-import Cart from "./Cart";
 
 
 const Navbar = () => {
-    const cart =  JSON.parse(localStorage.getItem('productName'));
-    const { user, logOut } = useContext(AuthContext)
+    const cart = JSON.parse(localStorage.getItem('productName'));
+    const { user, logOut, setTheme, theme } = useContext(AuthContext)
 
-    const setDarkMode = () => {
-        document.querySelector('html').setAttribute('data-theme', 'dark')
-    }
-    const setLightMode = () => {
-        document.querySelector('html').setAttribute('data-theme', 'light')
-    }
-
-    const toggleDarkMode = e => {
-        if (e.target.checked) setLightMode();
-        else setDarkMode()
+    const toggleDarkMode = () => {
+        if (theme === 'light') setTheme('dark');
+        else setTheme('light')
     }
 
     const handleLogOut = () => {
@@ -44,7 +37,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="sticky bg-white top-0 z-20">
+        <div className="sticky bg-base-100 top-0 z-20">
             <div className="navbar border-b py-5">
                 {/* this is the mobile view navbar */}
                 <div className="navbar-start">
@@ -82,9 +75,7 @@ const Navbar = () => {
                                 </div>
                             </div>
                             <hr className="mb-3" />
-                            <div className="flex justify-between items-center">
-                                <NavLink><li><a>Dark theme</a></li></NavLink><input onClick={toggleDarkMode} type="checkbox" className="toggle toggle-warning ml-5" />
-                            </div>
+                            <li><a onClick={toggleDarkMode}>{theme === "light" ? <TbSunFilled></TbSunFilled> : <TbMoonFilled></TbMoonFilled>} Theme</a></li>
                             {!user && <NavLink to={'/login'}><li><a><AiOutlineLogin></AiOutlineLogin>Login</a></li></NavLink>}
                             {user && <NavLink><li><a onClick={handleLogOut}><AiOutlineLogout></AiOutlineLogout>Log Out</a></li></NavLink>}
                         </ul>
