@@ -1,8 +1,8 @@
-# React + Vite
+This is a project made using React.js, Node.js, Mongodb, express, firebase, tailwind.
+1. There is user authentication enabled in this website
+2. products can be added by using add product route
+3. products can be updated by using update route
+4. products can be deleted from cart
+5. Can toggle between light and dark theme
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+website live link: https://assignment-10-auth-8e3db.web.app/
