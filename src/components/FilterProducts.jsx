@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const FilterProducts = ({ filterProduct }) => {
 
@@ -21,5 +22,9 @@ const FilterProducts = ({ filterProduct }) => {
         </div>
     );
 };
+
+FilterProducts.propTypes = {
+    filterProduct: PropTypes.object,
+}
 
 export default FilterProducts;

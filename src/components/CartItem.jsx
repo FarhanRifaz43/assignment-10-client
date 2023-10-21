@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import Swal from "sweetalert2";
 import { AuthContext } from "../firebase/AuthProvider";
+import PropTypes from 'prop-types';
 
 const CartItem = ({ item }) => {
     const {removeLocalStorage} = useContext(AuthContext);
@@ -31,5 +31,8 @@ const CartItem = ({ item }) => {
         </div>
     );
 };
+CartItem.propTypes = {
+    item: PropTypes.object,
+}
 
 export default CartItem;

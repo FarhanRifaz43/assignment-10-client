@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import FilterProducts from "./FilterProducts";
+import PropTypes from 'prop-types';
 
 const AllProducts = () => {
     const products = useLoaderData();
@@ -17,5 +18,8 @@ const AllProducts = () => {
         </div>
     );
 };
+FilterProducts.propTypes = {
+    map: PropTypes.func,
+}
 
 export default AllProducts;
