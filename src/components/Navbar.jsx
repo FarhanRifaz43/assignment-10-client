@@ -49,7 +49,7 @@ const Navbar = () => {
                             <NavLink to={'/'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Home</li></NavLink>
                             <NavLink to={'/all'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Products</li></NavLink>
                             {user && <><NavLink to={'/add'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Add Product</li></NavLink>
-                                <NavLink to={'/profile'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">My Profile</li></NavLink></>}
+                                <NavLink to={'/news'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">News</li></NavLink></>}
                         </ul>
                     </div>
                     {/* this is the desktop view navbar */}
@@ -60,13 +60,13 @@ const Navbar = () => {
                         <NavLink to={'/'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Home</li></NavLink>
                         <NavLink to={'/all'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Products</li></NavLink>
                         {user && <><NavLink to={'/add'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">Add Product</li></NavLink>
-                            <NavLink to={'/profile'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">My Profile</li></NavLink></>}
+                            <NavLink to={'/news'}><li className="hover:text-pink-400 p-2 rounded-xl font-semibold">News</li></NavLink></>}
                     </ul>
                 </div>
                 <div className="navbar-end">
                     {user && <NavLink to={'/cart'}><h2 tabIndex={1} className="p-2 text-xl rounded-xl hover:bg-pink-100 indicator mr-4"><span className="indicator-item badge badge-secondary">{cart.length}</span> <AiOutlineShoppingCart></AiOutlineShoppingCart></h2></NavLink>}
                     <div className="dropdown dropdown-bottom dropdown-end">
-                        <h2 tabIndex={0} className="hover:bg-pink-100 text-xl rounded-xl p-2 mr-4"><AiOutlineUser></AiOutlineUser></h2>
+                        <h2 tabIndex={0} className="hover:bg-pink-100 text-xl rounded-xl p-2 mr-4">{user ? <img className="w-8 rounded-full" src={user.photoURL} /> : <AiOutlineUser></AiOutlineUser>}</h2>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                             <div className="flex items-center gap-1 mb-3 mt-2">
                                 <img className="w-10 rounded-full" src={user?.photoURL || 'https://media.istockphoto.com/id/1016744004/vector/profile-placeholder-image-gray-silhouette-no-photo.jpg?s=612x612&w=0&k=20&c=mB6A9idhtEtsFXphs1WVwW_iPBt37S2kJp6VpPhFeoA='} alt="" />

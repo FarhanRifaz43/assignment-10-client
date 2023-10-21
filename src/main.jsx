@@ -14,6 +14,7 @@ import Details from './components/Details'
 import Cart from './components/Cart'
 import AllProducts from './components/AllProducts'
 import UpdateProduct from './components/UpdateProduct'
+import TechNewsPage from './components/TechNewsPage'
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
         path: '/update/:id',
         element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:4000/products/${params.id}`)
+      },
+      {
+        path: '/news',
+        element: <TechNewsPage></TechNewsPage>
       }
     ]
   },
