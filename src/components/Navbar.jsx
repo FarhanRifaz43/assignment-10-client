@@ -53,7 +53,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     {/* this is the desktop view navbar */}
-                    <a className="flex items-center font-bold cursor-default normal-case text-xl"><img className="w-10 rounded-full mr-2" src="https://previews.123rf.com/images/defmorph/defmorph1806/defmorph180600011/103110671-vector-icon-hi-tech-company-logo-design-business-symbol-concept-minimal-line-style-eps-10.jpg" alt="logo" />Brand Shop</a>
+                    <a className="flex grow items-center font-bold cursor-default normal-case text-xl"><img className="w-10 rounded-full mr-2" src="https://previews.123rf.com/images/defmorph/defmorph1806/defmorph180600011/103110671-vector-icon-hi-tech-company-logo-design-business-symbol-concept-minimal-line-style-eps-10.jpg" alt="logo" />Brand Shop</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-5 cursor-pointer">

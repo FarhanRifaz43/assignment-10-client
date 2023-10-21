@@ -5,8 +5,8 @@ const FilterProducts = ({ filterProduct }) => {
     const { _id, image, name, brand, type, price, rating } = filterProduct;
 
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl w-fit mx-auto p-4 border" data-aos="zoom-in-down" data-aos-duration="600">
-            <figure><img src={image} alt="Album" className="w-80 h-80" /></figure>
+        <div className="lg:card-side lg:flex rounded-xl bg-base-100 shadow-xl w-fit lg:mx-auto p-4 border" data-aos="zoom-in-down" data-aos-duration="600">
+            <figure><img src={image} alt="Album" className="lg:w-80 lg:h-80" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{brand}</p>

@@ -7,11 +7,11 @@ const Details = () => {
     const { setLocalStorage } = useContext(AuthContext);
 
     return (
-        <div className="bg-white rounded-lg lg:w-3/4 mx-auto p-4 flex">
-            <div className="w-1/2">
-                <img src={product.image} className="w-3/4 rounded-lg" />
+        <div className="bg-white rounded-lg lg:w-3/4 mx-auto p-4 lg:flex">
+            <div className="lg:w-1/2">
+                <img src={product.image} className="lg:w-3/4 lg:mb-0 mb-5 rounded-lg" />
             </div>
-            <div className="w-1/2 pl-4">
+            <div className="lg:w-1/2 pl-4">
                 <h2 className="text-3xl font-semibold mb-2">{product.name}</h2>
                 <p className="text-gray-600 text-lg mb-2">Brand: {product.brand}</p>
                 <p className="text-gray-600 text-lg mb-2">Type: {product.type}</p>

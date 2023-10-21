@@ -41,7 +41,7 @@ const AddProduct = () => {
 
     return (
         <div className="">
-            <div className="w-fit mx-auto items-center flex flex-col">
+            <div className="w-fit mx-auto items-center flex flex-col mb-8">
                 <div className="text-center lg:text-left" data-aos="zoom-in" data-aos-duration="600">
                     <h1 className="text-4xl font-bold text-center mt-16"><span className="text-pink-400">Add</span> New Product</h1>
                     <p className="py-6 text-center text-gray-500">Add a new product by providing the required information.</p>
