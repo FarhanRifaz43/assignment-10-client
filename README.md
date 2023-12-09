@@ -1,4 +1,4 @@
-This is an e-commerce website project.
+This is an e-commerce website project. </br>
 This project is made using React.js, Node.js, Mongodb, express, firebase, tailwind.
 
 Main features:
