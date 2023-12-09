@@ -1,4 +1,7 @@
-This is a project made using React.js, Node.js, Mongodb, express, firebase, tailwind.
+This is an e-commerce website project.
+This project is made using React.js, Node.js, Mongodb, express, firebase, tailwind.
+
+Main features:
 1. There is user authentication enabled in this website
 2. products can be added by using add product route
 3. products can be updated by using update route
